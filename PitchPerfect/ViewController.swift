@@ -26,6 +26,8 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         stopButton.hidden = true
+        recordingLabel.hidden = true
+        microphone.enabled = true
     }
 
     @IBAction func startRecording(sender: UIButton) {
