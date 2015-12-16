@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
+    
+    var audioPlayer:AVAudioPlayer!
+    func playAlteredSound() throws {
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let wookieSoundURL = NSBundle.mainBundle().URLForResource("r_wookie", withExtension: "wav")!
+        try! audioPlayer = AVAudioPlayer(contentsOfURL: wookieSoundURL, fileTypeHint: "wav")
         // Do any additional setup after loading the view.
     }
 
@@ -23,6 +31,8 @@ class PlaySoundsViewController: UIViewController {
     
 
     @IBAction func slowPlay(sender: UIButton) {
+        try! playAlteredSound()
+        
     }
     /*
     // MARK: - Navigation

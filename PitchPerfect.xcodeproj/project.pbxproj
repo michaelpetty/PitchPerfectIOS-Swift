@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E52B7DB51C21F2EE0088DC25 /* r_wookie.wav in Resources */ = {isa = PBXBuildFile; fileRef = E52B7DB41C21F2EE0088DC25 /* r_wookie.wav */; };
 		E581913A1C17A7C200343DFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58191391C17A7C200343DFA /* AppDelegate.swift */; };
 		E581913C1C17A7C200343DFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581913B1C17A7C200343DFA /* ViewController.swift */; };
 		E581913F1C17A7C200343DFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E581913D1C17A7C200343DFA /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E52B7DB41C21F2EE0088DC25 /* r_wookie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = r_wookie.wav; sourceTree = "<group>"; };
 		E58191361C17A7C200343DFA /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58191391C17A7C200343DFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E581913B1C17A7C200343DFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		E58191381C17A7C200343DFA /* PitchPerfect */ = {
 			isa = PBXGroup;
 			children = (
+				E52B7DB41C21F2EE0088DC25 /* r_wookie.wav */,
 				E58191391C17A7C200343DFA /* AppDelegate.swift */,
 				E581913B1C17A7C200343DFA /* ViewController.swift */,
 				E581913D1C17A7C200343DFA /* Main.storyboard */,
@@ -235,6 +238,7 @@
 				E58191441C17A7C200343DFA /* LaunchScreen.storyboard in Resources */,
 				E58191411C17A7C200343DFA /* Assets.xcassets in Resources */,
 				E581913F1C17A7C200343DFA /* Main.storyboard in Resources */,
+				E52B7DB51C21F2EE0088DC25 /* r_wookie.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
