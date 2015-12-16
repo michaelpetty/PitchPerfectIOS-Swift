@@ -3,9 +3,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Record-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,7 +83,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="wFf-bJ-por"/>
+                    <navigationItem key="navigationItem" title="Record" id="wFf-bJ-por"/>
                     <keyCommands/>
                     <connections>
                         <outlet property="microphone" destination="OfM-L6-gFy" id="GzC-0f-Sa7"/>
@@ -94,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="279" y="-383"/>
         </scene>
-        <!--View Controller-->
+        <!--Play Sounds View Controller-->
         <scene sceneID="huO-Bl-dTT">
             <objects>
-                <viewController id="src-zm-wWq" sceneMemberID="viewController">
+                <viewController id="src-zm-wWq" customClass="PlaySoundsViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rCY-PG-p9z"/>
                         <viewControllerLayoutGuide type="bottom" id="SpH-Uh-QKd"/>
@@ -105,13 +106,45 @@
                     <view key="view" contentMode="scaleToFill" id="cdv-fY-Rv2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rT2-wZ-PjV">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" image="snail"/>
+                                <connections>
+                                    <action selector="slowPlay:" destination="src-zm-wWq" eventType="touchUpInside" id="qbJ-U0-TiK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="rT2-wZ-PjV" secondAttribute="leading" id="Jgy-Va-igD"/>
+                            <constraint firstItem="rT2-wZ-PjV" firstAttribute="top" secondItem="rCY-PG-p9z" secondAttribute="bottom" constant="8" id="wDl-HA-XI6"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="rT2-wZ-PjV"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Jgy-Va-igD"/>
+                                <exclude reference="wDl-HA-XI6"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="rT2-wZ-PjV"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Jgy-Va-igD"/>
+                                <include reference="wDl-HA-XI6"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ff3-16-JxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="-383"/>
+            <point key="canvasLocation" x="1513.5" y="-399"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RDe-jX-77C">
@@ -135,6 +168,7 @@
     </scenes>
     <resources>
         <image name="microphone" width="100" height="100"/>
+        <image name="snail" width="200" height="200"/>
         <image name="stop" width="100" height="100"/>
     </resources>
 </document>
