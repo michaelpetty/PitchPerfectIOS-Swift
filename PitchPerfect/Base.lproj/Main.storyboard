@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,74 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfM-L6-gFy">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" image="microphone"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjL-Zj-aEp">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" image="stop"/>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C4-Nq-3Bh">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OfM-L6-gFy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="L4A-4S-wgh"/>
+                            <constraint firstItem="0C4-Nq-3Bh" firstAttribute="top" secondItem="OfM-L6-gFy" secondAttribute="bottom" constant="25" id="XUR-eR-FC3"/>
+                            <constraint firstItem="0C4-Nq-3Bh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZVP-N4-aHm"/>
+                            <constraint firstItem="OfM-L6-gFy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fLG-vR-JWB"/>
+                            <constraint firstItem="NjL-Zj-aEp" firstAttribute="top" secondItem="OfM-L6-gFy" secondAttribute="bottom" constant="112" id="nMD-J7-pgu"/>
+                            <constraint firstItem="NjL-Zj-aEp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wf4-qr-ZSt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="OfM-L6-gFy"/>
+                                <exclude reference="NjL-Zj-aEp"/>
+                                <exclude reference="0C4-Nq-3Bh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="nMD-J7-pgu"/>
+                                <exclude reference="wf4-qr-ZSt"/>
+                                <exclude reference="L4A-4S-wgh"/>
+                                <exclude reference="fLG-vR-JWB"/>
+                                <exclude reference="XUR-eR-FC3"/>
+                                <exclude reference="ZVP-N4-aHm"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="OfM-L6-gFy"/>
+                                <include reference="NjL-Zj-aEp"/>
+                                <include reference="0C4-Nq-3Bh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="nMD-J7-pgu"/>
+                                <include reference="wf4-qr-ZSt"/>
+                                <include reference="L4A-4S-wgh"/>
+                                <include reference="fLG-vR-JWB"/>
+                                <include reference="XUR-eR-FC3"/>
+                                <include reference="ZVP-N4-aHm"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <keyCommands/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="microphone" width="100" height="100"/>
+        <image name="stop" width="100" height="100"/>
+    </resources>
 </document>
