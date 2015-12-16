@@ -81,7 +81,9 @@
                     </view>
                     <keyCommands/>
                     <connections>
+                        <outlet property="microphone" destination="OfM-L6-gFy" id="GzC-0f-Sa7"/>
                         <outlet property="recordingLabel" destination="0C4-Nq-3Bh" id="qbf-3y-MfA"/>
+                        <outlet property="stopButton" destination="NjL-Zj-aEp" id="YqJ-iv-SvP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
