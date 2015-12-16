@@ -21,6 +21,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="microphone"/>
+                                <connections>
+                                    <action selector="startRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cqa-jB-VcU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjL-Zj-aEp">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -77,6 +80,9 @@
                         </variation>
                     </view>
                     <keyCommands/>
+                    <connections>
+                        <outlet property="recordingLabel" destination="0C4-Nq-3Bh" id="qbf-3y-MfA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
