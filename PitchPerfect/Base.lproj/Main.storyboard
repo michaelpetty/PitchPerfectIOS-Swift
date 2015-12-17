@@ -9,7 +9,7 @@
         <!--Record-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RecordSoundsViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -38,7 +38,7 @@
                                 <animations/>
                                 <state key="normal" image="stop"/>
                                 <connections>
-                                    <segue destination="src-zm-wWq" kind="show" id="XP1-6W-ac6"/>
+                                    <action selector="stopAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JPS-UR-bpm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -59,12 +59,12 @@
                                 <exclude reference="NjL-Zj-aEp"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="j6E-i9-IJ8"/>
+                                <exclude reference="wf4-qr-ZSt"/>
                                 <exclude reference="L4A-4S-wgh"/>
                                 <exclude reference="fLG-vR-JWB"/>
                                 <exclude reference="XUR-eR-FC3"/>
                                 <exclude reference="ZVP-N4-aHm"/>
-                                <exclude reference="wf4-qr-ZSt"/>
-                                <exclude reference="j6E-i9-IJ8"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -74,12 +74,12 @@
                                 <include reference="NjL-Zj-aEp"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="j6E-i9-IJ8"/>
+                                <include reference="wf4-qr-ZSt"/>
                                 <include reference="L4A-4S-wgh"/>
                                 <include reference="fLG-vR-JWB"/>
                                 <include reference="XUR-eR-FC3"/>
                                 <include reference="ZVP-N4-aHm"/>
-                                <include reference="wf4-qr-ZSt"/>
-                                <include reference="j6E-i9-IJ8"/>
                             </mask>
                         </variation>
                     </view>
@@ -89,11 +89,12 @@
                         <outlet property="microphone" destination="OfM-L6-gFy" id="GzC-0f-Sa7"/>
                         <outlet property="recordingLabel" destination="0C4-Nq-3Bh" id="qbf-3y-MfA"/>
                         <outlet property="stopButton" destination="NjL-Zj-aEp" id="YqJ-iv-SvP"/>
+                        <segue destination="src-zm-wWq" kind="show" identifier="stopRecording" id="kG5-K6-Whr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-109" y="-383"/>
+            <point key="canvasLocation" x="-124.5" y="-378"/>
         </scene>
         <!--Play Sounds View Controller-->
         <scene sceneID="huO-Bl-dTT">
@@ -153,12 +154,12 @@
                                 <exclude reference="90q-Yq-W2J"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="xZe-fQ-KcH"/>
                                 <exclude reference="1rc-h9-DY0"/>
                                 <exclude reference="toX-5i-S2H"/>
                                 <exclude reference="Hn4-2j-9AX"/>
                                 <exclude reference="Q5g-fy-DBL"/>
                                 <exclude reference="oTF-zY-sX6"/>
-                                <exclude reference="xZe-fQ-KcH"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -168,19 +169,19 @@
                                 <include reference="90q-Yq-W2J"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="xZe-fQ-KcH"/>
                                 <include reference="1rc-h9-DY0"/>
                                 <include reference="toX-5i-S2H"/>
                                 <include reference="Hn4-2j-9AX"/>
                                 <include reference="Q5g-fy-DBL"/>
                                 <include reference="oTF-zY-sX6"/>
-                                <include reference="xZe-fQ-KcH"/>
                             </mask>
                         </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ff3-16-JxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472" y="-383"/>
+            <point key="canvasLocation" x="594" y="-378"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RDe-jX-77C">
@@ -199,7 +200,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPI-gD-Ded" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-630" y="-383"/>
+            <point key="canvasLocation" x="-811.5" y="-383"/>
         </scene>
     </scenes>
     <resources>
