@@ -13,11 +13,9 @@ class PlaySoundsViewController: UIViewController {
     
     var audioPlayer:AVAudioPlayer!
     func playAlteredSound(audioSpeed:Float) throws {
-        let wookieSoundURL = NSBundle.mainBundle().URLForResource("r_wookie", withExtension: "wav")!
-        try! audioPlayer = AVAudioPlayer(contentsOfURL: wookieSoundURL, fileTypeHint: "wav")
         audioPlayer.stop()
-        audioPlayer.enableRate = true
         audioPlayer.rate = audioSpeed
+        audioPlayer.currentTime = 0.0
         audioPlayer.prepareToPlay()
         audioPlayer.play()
     }
@@ -25,6 +23,9 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let wookieSoundURL = NSBundle.mainBundle().URLForResource("r_wookie", withExtension: "wav")!
+        try! audioPlayer = AVAudioPlayer(contentsOfURL: wookieSoundURL, fileTypeHint: "wav")
+        audioPlayer.enableRate = true
     }
 
     override func didReceiveMemoryWarning() {

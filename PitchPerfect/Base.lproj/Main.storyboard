@@ -135,8 +135,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="90q-Yq-W2J" firstAttribute="leading" secondItem="cdv-fY-Rv2" secondAttribute="leadingMargin" constant="42" id="1rc-h9-DY0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KUz-64-DTm" secondAttribute="trailing" constant="49" id="Hn4-2j-9AX"/>
+                            <constraint firstItem="90q-Yq-W2J" firstAttribute="leading" secondItem="cdv-fY-Rv2" secondAttribute="leadingMargin" constant="42" id="1rc-h9-DY0">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="KUz-64-DTm" secondAttribute="trailing" constant="49" id="Hn4-2j-9AX">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="KUz-64-DTm" firstAttribute="top" secondItem="rCY-PG-p9z" secondAttribute="bottom" constant="43" id="Q5g-fy-DBL"/>
                             <constraint firstItem="nkN-lN-584" firstAttribute="centerX" secondItem="cdv-fY-Rv2" secondAttribute="centerX" id="oTF-zY-sX6"/>
                             <constraint firstItem="90q-Yq-W2J" firstAttribute="top" secondItem="rCY-PG-p9z" secondAttribute="bottom" constant="43" id="toX-5i-S2H"/>
