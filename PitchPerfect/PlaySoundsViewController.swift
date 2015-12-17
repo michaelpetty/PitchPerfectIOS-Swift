@@ -24,10 +24,6 @@ class PlaySoundsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
- //       let wookieSoundURL = NSBundle.mainBundle().URLForResource("r_wookie", withExtension: "wav")!
-   //     try! audioPlayer = AVAudioPlayer(contentsOfURL: wookieSoundURL, fileTypeHint: "wav")
- //       audioPlayer.enableRate = true
-        
         // Do any additional setup after loading the view.
     }
 
@@ -47,7 +43,9 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func stopPlayer(sender: UIButton) {
-        audioPlayer.stop()
+        if audioPlayer != nil {
+            audioPlayer.stop()
+        }
     }
     /*
     // MARK: - Navigation
