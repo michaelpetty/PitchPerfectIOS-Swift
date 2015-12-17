@@ -38,7 +38,16 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         stopButton.hidden = false
         microphone.enabled = false
         
-        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentationDirectory, .UserDomainMask, true)[0] as String
+        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentationDirectory, .UserDomainMask, true).first!
+        if !NSFileManager.defaultManager().fileExistsAtPath(dirPath) {
+            do {
+                try NSFileManager.defaultManager().createDirectoryAtPath(dirPath, withIntermediateDirectories: false, attributes: nil)
+                
+            } catch let createDirectoryError as NSError {
+                print("Error with creating directory at path: \(createDirectoryError.localizedDescription)")
+            }
+            
+        }
         let recordingName = "my_audio.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = NSURL.fileURLWithPathComponents(pathArray)

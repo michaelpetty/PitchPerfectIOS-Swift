@@ -38,7 +38,7 @@
                                 <animations/>
                                 <state key="normal" image="stop"/>
                                 <connections>
-                                    <action selector="stopAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JPS-UR-bpm"/>
+                                    <action selector="stopAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r72-5A-LiW"/>
                                 </connections>
                             </button>
                         </subviews>
