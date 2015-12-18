@@ -12,6 +12,7 @@ import AVFoundation
 class PlaySoundsViewController: UIViewController {
     
     var audioPlayer:AVAudioPlayer!
+    var receivedAudio: RecordedAudio!
     func playAlteredSound(audioSpeed:Float) throws {
         audioPlayer.stop()
         audioPlayer.rate = audioSpeed
@@ -23,8 +24,7 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let wookieSoundURL = NSBundle.mainBundle().URLForResource("r_wookie", withExtension: "wav")!
-        try! audioPlayer = AVAudioPlayer(contentsOfURL: wookieSoundURL, fileTypeHint: "wav")
+        audioPlayer = try! AVAudioPlayer(contentsOfURL: receivedAudio.filePathURL)
         audioPlayer.enableRate = true
     }
 
