@@ -13,6 +13,8 @@ class PlaySoundsViewController: UIViewController {
     
     var audioPlayer:AVAudioPlayer!
     var receivedAudio: RecordedAudio!
+    var audioEngine: AVAudioEngine!
+    var audioFile: AVAudioFile!
     func playAlteredSound(audioSpeed:Float) throws {
         audioPlayer.stop()
         audioPlayer.rate = audioSpeed
@@ -26,6 +28,8 @@ class PlaySoundsViewController: UIViewController {
         // Do any additional setup after loading the view.
         audioPlayer = try! AVAudioPlayer(contentsOfURL: receivedAudio.filePathURL)
         audioPlayer.enableRate = true
+        audioEngine = AVAudioEngine()
+        try! audioFile = AVAudioFile(forReading: receivedAudio.filePathURL)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,11 +48,33 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func chipmunkPlayer(sender: UIButton) {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        let pitchPlayer = AVAudioPlayerNode()
+        let timePitch = AVAudioUnitTimePitch()
+        timePitch.pitch = 1000
+        
+        audioEngine.attachNode(pitchPlayer)
+        audioEngine.attachNode(timePitch)
+        
+        audioEngine.connect(pitchPlayer, to: timePitch, format: nil)
+        audioEngine.connect(timePitch, to: audioEngine.outputNode, format: nil)
+        
+        pitchPlayer.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        try! audioEngine.start()
+        
+        pitchPlayer.play()
+        
     }
     
     @IBAction func stopPlayer(sender: UIButton) {
         if audioPlayer != nil {
             audioPlayer.stop()
+        }
+        if audioEngine != nil {
+            audioEngine.stop()
+            audioEngine.reset()
         }
     }
     /*
