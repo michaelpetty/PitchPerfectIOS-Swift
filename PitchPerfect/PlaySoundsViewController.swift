@@ -43,6 +43,9 @@ class PlaySoundsViewController: UIViewController {
         try! playAlteredSound(2.0)
     }
     
+    @IBAction func chipmunkPlayer(sender: UIButton) {
+    }
+    
     @IBAction func stopPlayer(sender: UIButton) {
         if audioPlayer != nil {
             audioPlayer.stop()
