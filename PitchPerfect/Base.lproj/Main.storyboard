@@ -140,6 +140,14 @@
                                     <action selector="chipmunkPlayer:" destination="src-zm-wWq" eventType="touchUpInside" id="DHo-24-PMm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkG-uS-y2x">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" image="vader"/>
+                                <connections>
+                                    <action selector="vaderEffect:" destination="src-zm-wWq" eventType="touchUpInside" id="nYW-qo-lhV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,7 +159,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="KUz-64-DTm" secondAttribute="trailing" constant="49" id="Hn4-2j-9AX">
                                 <variation key="widthClass=compact" constant="20"/>
                             </constraint>
+                            <constraint firstItem="YkG-uS-y2x" firstAttribute="top" secondItem="KUz-64-DTm" secondAttribute="bottom" constant="43" id="JoM-4i-7ti"/>
                             <constraint firstItem="KUz-64-DTm" firstAttribute="top" secondItem="rCY-PG-p9z" secondAttribute="bottom" constant="43" id="Q5g-fy-DBL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YkG-uS-y2x" secondAttribute="trailing" constant="20" id="Twg-Vq-jD2"/>
                             <constraint firstItem="z7n-tJ-XL5" firstAttribute="leading" secondItem="cdv-fY-Rv2" secondAttribute="leadingMargin" constant="20" id="l29-Jl-qvr"/>
                             <constraint firstItem="nkN-lN-584" firstAttribute="centerX" secondItem="cdv-fY-Rv2" secondAttribute="centerX" id="oTF-zY-sX6"/>
                             <constraint firstItem="90q-Yq-W2J" firstAttribute="top" secondItem="rCY-PG-p9z" secondAttribute="bottom" constant="43" id="toX-5i-S2H"/>
@@ -163,6 +173,7 @@
                                 <exclude reference="KUz-64-DTm"/>
                                 <exclude reference="90q-Yq-W2J"/>
                                 <exclude reference="z7n-tJ-XL5"/>
+                                <exclude reference="YkG-uS-y2x"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1rc-h9-DY0"/>
@@ -171,6 +182,8 @@
                                 <exclude reference="l29-Jl-qvr"/>
                                 <exclude reference="Hn4-2j-9AX"/>
                                 <exclude reference="Q5g-fy-DBL"/>
+                                <exclude reference="JoM-4i-7ti"/>
+                                <exclude reference="Twg-Vq-jD2"/>
                                 <exclude reference="oTF-zY-sX6"/>
                                 <exclude reference="xZe-fQ-KcH"/>
                             </mask>
@@ -181,6 +194,7 @@
                                 <include reference="KUz-64-DTm"/>
                                 <include reference="90q-Yq-W2J"/>
                                 <include reference="z7n-tJ-XL5"/>
+                                <include reference="YkG-uS-y2x"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1rc-h9-DY0"/>
@@ -189,6 +203,8 @@
                                 <include reference="l29-Jl-qvr"/>
                                 <include reference="Hn4-2j-9AX"/>
                                 <include reference="Q5g-fy-DBL"/>
+                                <include reference="JoM-4i-7ti"/>
+                                <include reference="Twg-Vq-jD2"/>
                                 <include reference="oTF-zY-sX6"/>
                                 <include reference="xZe-fQ-KcH"/>
                             </mask>
@@ -225,5 +241,6 @@
         <image name="rabbit" width="100" height="100"/>
         <image name="snail" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>
+        <image name="vader" width="100" height="100"/>
     </resources>
 </document>

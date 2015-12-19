@@ -51,16 +51,43 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
+        
+        let ratePlayer = AVAudioPlayerNode()
+        let timeRate = AVAudioUnitVarispeed()
+        timeRate.rate = 1.8
+        audioEngine.attachNode(ratePlayer)
+        audioEngine.attachNode(timeRate)
+        audioEngine.connect(ratePlayer, to: timeRate, format: nil)
+        audioEngine.connect(timeRate, to: audioEngine.outputNode, format: nil)
+        
+        ratePlayer.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        try! audioEngine.start()
+        
+        ratePlayer.play()
+        
+    }
+    
+    @IBAction func vaderEffect(sender: UIButton) {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
         let pitchPlayer = AVAudioPlayerNode()
         let timePitch = AVAudioUnitTimePitch()
-        timePitch.pitch = 1000
+        timePitch.pitch = -700
+        let timeRate = AVAudioUnitVarispeed()
+        timeRate.rate = 0.8
         
+
         audioEngine.attachNode(pitchPlayer)
         audioEngine.attachNode(timePitch)
+        audioEngine.attachNode(timeRate)
         
+        audioEngine.mainMixerNode.outputVolume = 1.0
+
         audioEngine.connect(pitchPlayer, to: timePitch, format: nil)
-        audioEngine.connect(timePitch, to: audioEngine.outputNode, format: nil)
-        
+        audioEngine.connect(timePitch, to: audioEngine.mainMixerNode, format: nil)
+        audioEngine.connect(timeRate, to: audioEngine.mainMixerNode, format: nil)
+        audioEngine.connect(audioEngine.mainMixerNode, to: audioEngine.outputNode, format: nil)
         pitchPlayer.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
         try! audioEngine.start()
         
